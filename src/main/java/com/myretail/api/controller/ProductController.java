@@ -1,5 +1,9 @@
 package com.myretail.api.controller;
 
+import java.math.BigInteger;
+
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
 
+import com.myretail.api.model.Payload;
 import com.myretail.api.model.Product;
 import com.myretail.api.service.ProductService;
 
@@ -27,7 +32,7 @@ public class ProductController {
     ProductService productService;
 
     @RequestMapping(value = { "product/{productId}" }, method = { RequestMethod.GET }, produces = { MediaType.APPLICATION_JSON_VALUE } )
-    public DeferredResult<Product> getProduct( @PathVariable String productId ) {
+    public DeferredResult<Product> getProduct( @PathVariable BigInteger productId) {
         
         LOGGER.info( "Input -> productId: {}", productId );
         

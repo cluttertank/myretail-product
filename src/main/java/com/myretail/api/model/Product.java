@@ -1,20 +1,25 @@
 package com.myretail.api.model;
 
+import java.math.BigInteger;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Product {
     
-    private String id;
+    private BigInteger id;
     
     private String name;
     
+    @JsonProperty("current_price")
     private Price currentPrice;
 
-    public String getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
