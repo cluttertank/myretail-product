@@ -1,0 +1,55 @@
+{
+    "price": {
+        "12345678": {
+            "value": 99.01,
+            "currency_code": "USD"
+        },
+        "13860428": {
+            "value": 13.49,
+            "currency_code": "USD"
+        },
+        "15117729": {
+            "value": 10.99,
+            "currency_code": "USD"
+        },
+        "16483589": {
+            "value": 11.09,
+            "currency_code": "USD"
+        },
+        "16696652": {
+            "value": 12.19,
+            "currency_code": "USD"
+        },
+        "16752456": {
+            "value": 13.29,
+            "currency_code": "USD"
+        },
+        "15643793": {
+            "value": 14.39,
+            "currency_code": "USD"
+        }
+    },
+    "product-attributes": {
+        "12345678": {
+            "description": "Z-Boy 2000"
+        },
+        "13860428": {
+            "description": "The Big Lebowski (Blu-ray)"
+        },
+        "15117729": {
+            "description": "Sample SKU1"
+        },
+        "16483589": {
+            "description": "Sample SKU2"
+        },
+        "16696652": {
+            "description": "Sample SKU3"
+        },
+        "16752456": {
+            "description": "Sample SKU4"
+        },
+        "15643793": {
+            "description": "Sample SKU5"
+        }
+    }
+}
