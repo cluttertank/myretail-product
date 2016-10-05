@@ -35,3 +35,43 @@ To Run:
     - Contains and jacoco code-coverage report and unit test reports
 * test-results.zip
     - Unit test results
+
+# Features
+* Resilience
+    - features use of Hystrix command to ensure resilience
+* asynch processing
+    - Use of defferred result helps freeing up of the io threads
+* RxJava
+    - Parallel processing
+    - Allows a more functional way of programming
+    - Supported by hystrix command inherently
+* unit-testing
+    - Over 90% of code coverage
+    - Employs RestAssured to test rest interface by mocking spring mvc
+* monitoring
+    - includes a healthcheck url
+* java 8
+    - Use of lambdas and streams
+
+# Areas of improvement
+* Security
+    - request authorization / authentication - LDAP, etc
+    - SSL
+* Code-quality
+    - sonar
+* Metrics reporting Aspect
+    - jvm
+    - custom
+    - hystrix
+* Logging
+    - logging aspect
+    - request-id
+    - MDC
+    - request/response
+* configuration
+    - properties encryption
+    - runtime dynamic loading - zookeeper
+    - internationalization of messages
+* Service registry
+* Service discovery
+* Persisten noSQL DB
