@@ -1,20 +1,21 @@
 package com.myretail.api.model;
 
+import java.math.BigInteger;
 import java.util.Map;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 public class ProductAttributes {
     
-    private String id;
+    private BigInteger id;
     
     private Map<String, String> attributes;
-    
-    public String getId() {
+
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 

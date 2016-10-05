@@ -2,7 +2,6 @@
     <property name="FILE_LOG_PATTERN"
         value="%d{yyyy-MM-dd HH:mm:ss.SSS} |%level| %thread | %logger{36} |%X{request-id}| %msg%n" />
     <property name="APP_LOG_FILE" value="${log.location}/${service.instance.name}.log" />
-    <property name="FOUNDATION_LOG_FILE" value="${log.location}/core-foundation.log" />
     <property name="LOG_LEVEL_THIRD_PARTY" value="warn" />
     <property name="LOG_LEVEL" value="info" />
     <property name="FOUNDATION_LOG_LEVEL" value="info" />

@@ -49,7 +49,7 @@ public class ProductControllerTest {
     private IPCClient productFieldsIPCClient;
 
     @Mock
-    private DataAccessObject<Price> priceDAO;
+    private DataAccessObject priceDAO;
 
     @Autowired
     @InjectMocks
@@ -211,7 +211,7 @@ public class ProductControllerTest {
     public void setupData() {
 
         ProductAttributes productAttributes = new ProductAttributes();
-        productAttributes.setId("12345678");
+        productAttributes.setId(new BigInteger("12345678"));
         productAttributes.setAttributes(Collections.unmodifiableMap(new HashMap<String, String>() {{
             put("description", "Twin Peaks CD");
         }}));
@@ -223,35 +223,35 @@ public class ProductControllerTest {
             .when(productFieldsIPCClient).getForObject(Mockito.contains("12345678"), Mockito.any(Class.class));
         Mockito
             .doReturn(price)
-            .when(priceDAO).getItemById(Mockito.contains("12345678"));
+            .when(priceDAO).getItemById(Mockito.contains("12345678"), Mockito.any(Class.class));
 
         Mockito
             .doReturn(productAttributes)
             .when(productFieldsIPCClient).getForObject(Mockito.contains("321"), Mockito.any(Class.class));
         Mockito
             .doThrow(new NullPointerException("Data interrupted"))
-            .when(priceDAO).getItemById("321");
+            .when(priceDAO).getItemById("321", Price.class);
 
         Mockito
             .doThrow(new IPCClientException("Service not available", 503))
             .when(productFieldsIPCClient).getForObject(Mockito.contains("432"), Mockito.any(Class.class));
         Mockito
             .doReturn(price)
-            .when(priceDAO).getItemById("432");
+            .when(priceDAO).getItemById("432", Price.class);
 
         Mockito
             .doThrow(new IPCClientException("Product not found", 404))
             .when(productFieldsIPCClient).getForObject(Mockito.contains("543"), Mockito.any(Class.class));
         Mockito
             .doReturn(null)
-            .when(priceDAO).getItemById("543");
+            .when(priceDAO).getItemById("543", Price.class);
 
         Mockito
             .doReturn(productAttributes)
             .when(productFieldsIPCClient).getForObject(Mockito.contains("654"), Mockito.any(Class.class));
         Mockito
             .doReturn(price)
-            .when(priceDAO).getItemById("654");
+            .when(priceDAO).getItemById("654", Price.class);
 
         Mockito
             .doThrow(new NullPointerException("Connection interrupted"))

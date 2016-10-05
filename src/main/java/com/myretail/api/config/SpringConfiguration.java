@@ -23,8 +23,8 @@ public class SpringConfiguration {
     
     @Bean
     @Autowired
-    public DataAccessObject<Price> priceDAO(DataStore dataStore) {
-        return new MappedObjectDAO<>("price", dataStore);
+    public DataAccessObject priceDAO(DataStore dataStore) {
+        return new MappedObjectDAO("price", dataStore);
     }
     
     @Bean

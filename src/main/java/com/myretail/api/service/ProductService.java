@@ -28,7 +28,7 @@ public class ProductService {
     private IPCClient productFieldsIPCClient;
     
     @Autowired
-    private DataAccessObject<Price> priceDAO;
+    private DataAccessObject priceDAO;
     
     public Observable<Product> getProduct(final BigInteger productId) {
         
@@ -87,7 +87,7 @@ public class ProductService {
 
     private CircuitCommand<Price> getPriceCommand(BigInteger productId) {
         return new CircuitCommand<Price>( "GetPrice",
-                () -> priceDAO.getItemById(productId.toString())
+                () -> priceDAO.getItemById(productId.toString(), Price.class)
             );
     }
 
