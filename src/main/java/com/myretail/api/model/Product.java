@@ -2,16 +2,24 @@ package com.myretail.api.model;
 
 import java.math.BigInteger;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Product {
     
+    @Min(0)
+    @NotNull
     private BigInteger id;
     
     private String name;
     
+    @Valid
+    @NotNull
     @JsonProperty("current_price")
     private Price currentPrice;
 

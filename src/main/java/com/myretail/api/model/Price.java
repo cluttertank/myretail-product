@@ -2,14 +2,21 @@ package com.myretail.api.model;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Price {
     
+    @Min(0)
+    @NotNull
     private BigDecimal value;
-    
+
+    @NotEmpty
     @JsonProperty("currency_code")
     private String currencyCode;
 
