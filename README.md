@@ -38,20 +38,22 @@ To Run:
 
 # Features
 * Resilience
-    - features use of Hystrix command to ensure resilience
-* asynch processing
-    - Use of defferred result helps freeing up of the io threads
+    - features use of Hystrix command to ensure robustness
+* Asynchronous processing
+    - Use of deferred result helps freeing up of the io threads
 * RxJava
     - Parallel processing
     - Allows a more functional way of programming
     - Supported by hystrix command inherently
-* unit-testing
+* Unit-testing
     - Over 90% of code coverage
-    - Employs RestAssured to test rest interface by mocking spring mvc
+    - Employs RestAssured to test rest interface
 * monitoring
     - includes a healthcheck url
 * java 8
     - Use of lambdas and streams
+* logging
+    - dynamic runtime logging updates using logback
 
 # Areas of improvement
 * Security
@@ -74,4 +76,4 @@ To Run:
     - internationalization of messages
 * Service registry
 * Service discovery
-* Persisten noSQL DB
+* Persistent noSQL DB
